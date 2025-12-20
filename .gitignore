@@ -33,8 +33,6 @@ build/
 .pytest_cache/
 
 # C++
-*.exe
-*.o
 *.so
 *.a
 
