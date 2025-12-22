@@ -12,24 +12,22 @@
 class Solution {
 public:
     int maxDepth(TreeNode* root) {
-        //层序遍历的办法得到深度
+        //全局变量depth,counter
         int depth=0;
         deque<TreeNode*>dq;
-        if(root!=NULL)
-            dq.push_back(root);
+        if(root!=nullptr)dq.push_back(root);
         while(not dq.empty()){
             int times=dq.size();
             for(int i=0;i<times;i++){
-                if(dq.front()->left!=NULL)dq.push_back(dq.front()->left);
-                if(dq.front()->right!=NULL)dq.push_back(dq.front()->right);
+                if(dq.front()->left!=nullptr)dq.push_back(dq.front()->left);
+                if(dq.front()->right!=nullptr)dq.push_back(dq.front()->right);
                 dq.pop_front();
             }
             depth++;
         }
         return depth;
-        //创建整数变量记录深度
-        //创建队列记录下一次需要遍历的节点
-        //循环层序遍历
-        //返回深度
+        //容器deque
+        //while循环
+        //返回depth
     }
 };
