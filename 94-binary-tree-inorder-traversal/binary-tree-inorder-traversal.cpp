@@ -14,9 +14,10 @@ public:
     //创建块内数组
     vector<int>vt;
     void inorder(TreeNode* root){
-        if(root!=nullptr)inorder(root->left);
-        if(root!=nullptr)vt.push_back(root->val);
-        if(root!=nullptr)inorder(root->right);
+        if(root==nullptr)return;
+        inorder(root->left);
+        vt.push_back(root->val);
+        inorder(root->right);
     }
     //利用函数递归调用实现遍历
         //遍历树，将元素添加进数组
