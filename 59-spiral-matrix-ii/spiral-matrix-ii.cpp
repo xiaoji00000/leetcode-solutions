@@ -13,21 +13,21 @@ public:
                 state=1;
                 top++;
             }
-            if(state==1){
+            else if(state==1){
                 for(int i=top;i<=bottom;i++){
                     vvt[i][right]=k++;
                 }
                 state=2;
                 right--;
             }
-            if(state==2){
+            else if(state==2){
                 for(int i=right;i>=left;i--){
                     vvt[bottom][i]=k++;
                 }
                 state=3;
                 bottom--;
             }
-            if(state==3){
+            else if(state==3){
                 for(int i=bottom;i>=top;i--){
                     vvt[i][left]=k++;
                 }
