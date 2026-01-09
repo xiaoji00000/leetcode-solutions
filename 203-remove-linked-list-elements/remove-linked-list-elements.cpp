@@ -19,7 +19,7 @@ public:
             ListNode* del = head;
             head = head->next;
             // 若是 LeetCode 可不写 delete；自建链表建议释放
-            // delete del;
+            delete del;
         } else {
             tail->next = head;
             tail = head;
