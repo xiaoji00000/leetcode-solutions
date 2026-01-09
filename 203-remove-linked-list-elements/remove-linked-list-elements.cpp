@@ -11,22 +11,21 @@
 class Solution {
 public:
     ListNode* removeElements(ListNode* head, int val) {
-         ListNode dummy(0);
-    ListNode* tail = &dummy;
-
-    while (head) {
-        if (head->val == val) {
-            ListNode* del = head;
-            head = head->next;
-            // 若是 LeetCode 可不写 delete；自建链表建议释放
-            delete del;
-        } else {
-            tail->next = head;
-            tail = head;
-            head = head->next;
+        ListNode dummy(0);
+        ListNode* tail=&dummy;
+        while(head){
+            if(head->val==val){
+                ListNode*del=head;
+                head=head->next;
+                delete del;
+            }
+            else{
+                tail->next=head;
+                tail=tail->next;
+                head=head->next;
+            }
         }
-    }
-    tail->next = nullptr;
-    return dummy.next;
+        tail->next=nullptr;
+        return dummy.next;
     }
 };
